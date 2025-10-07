@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
             <div class="footer-bottom">
-                <p>&copy; {{ currentYear }} Ponto.IF - IFPE Campus Palmares. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Ponto.IF - IFPE Campus Palmares. Todos os direitos reservados.</p>
             </div>
     </footer>
 </template>

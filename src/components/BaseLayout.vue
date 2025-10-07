@@ -1,14 +1,14 @@
 <script setup>
-import Footer from './Footer.vue'
+import Footer from './Footer.vue';
 import NavBar from './Navbar.vue';
 </script>
 
 <template>
     <div class="page-container">
         <main class="content">
-            <NavBar />
+            <NavBar></NavBar>
             <slot></slot>
-            <Footer />
+            <Footer></Footer>
         </main>
     </div>
 </template>
