@@ -1,16 +1,14 @@
 <script setup>
+import Navbar from './Navbar.vue';
 import Footer from './Footer.vue';
-import NavBar from './Navbar.vue';
 </script>
 
 <template>
     <div class="page-container">
         <main class="content">
-            <NavBar></NavBar>
+            <Navbar></Navbar>
             <slot></slot>
             <Footer></Footer>
         </main>
     </div>
 </template>
-
-<style scoped></style>
