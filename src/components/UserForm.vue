@@ -2,11 +2,12 @@
 import { ref } from "vue";
 import GenericDAO from "../service/GenericDAO"
 
-const DAO = new GenericDAO('user');
+const DAO = new GenericDAO('register');
 const user = ref({
     name: "",
     email: "",
     registration: "",
+    password: "",
 });
 
 const submitForm = () => {
@@ -34,6 +35,11 @@ const submitForm = () => {
         <div>
             <label class="block text-sm font-medium text-gray-600 mb-1">Matrícula</label>
             <input v-model="user.registration" type="text" maxlength="20"
+                class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 p-2" required />
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">Password</label>
+            <input v-model="user.password" type="password" maxlength="20"
                 class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 p-2" required />
         </div>
 

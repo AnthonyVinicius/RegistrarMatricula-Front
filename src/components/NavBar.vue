@@ -118,9 +118,6 @@ const usuarioLogado = ref({
 });
 
 const navLinks = [
-    { to: "/dashboard", label: "Dashboard" },
-    { to: "/gerenciar-alunos", label: "Gerenciar Alunos" },
-    { to: "/configuracoes", label: "Configurações" },
 ];
 
 const logout = () => {
