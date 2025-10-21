@@ -19,4 +19,3 @@ COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 3003
 
 CMD ["nginx", "-g", "daemon off;"]
-npmr
