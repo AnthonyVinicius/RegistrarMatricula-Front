@@ -9,23 +9,23 @@ class GenericDAO {
   }
 
   async getAll() {
-    return await apiRequest('get', `/${this.resourcePath}`);
+    return await apiRequest('get', `/api/v1/${this.resourcePath}`);
   }
 
   async getById(id) {
-    return await apiRequest('get', `/${this.resourcePath}/${id}`);
+    return await apiRequest('get', `/api/v1/${this.resourcePath}/${id}`);
   }
 
   async insert(object) {
-    return await apiRequest('post', `/${this.resourcePath}`, object);
+    return await apiRequest('post', `/api/v1/${this.resourcePath}`, object);
   }
 
   async update(id, object) {
-    return await apiRequest('put', `/${this.resourcePath}/${id}`, object);
+    return await apiRequest('put', `/api/v1/${this.resourcePath}/${id}`, object);
   }
 
   async delete(id) {
-    return await apiRequest('delete', `/${this.resourcePath}/${id}`);
+    return await apiRequest('delete', `/api/v1/${this.resourcePath}/${id}`);
   }
 }
 
