@@ -1,31 +1,31 @@
-import apiRequest from '../api/apiService';
+import apiRequest from "../api/apiService";
 
 class GenericDAO {
-  constructor(resourcePath) {
-    if (!resourcePath) {
-      throw new Error('Caminho do recurso não definido');
+  constructor(baseURL) {
+    if (!baseURL) {
+      throw new Error("A URL base do recurso é obrigatória.");
     }
-    this.resourcePath = resourcePath;
+    this.baseURL = baseURL;
   }
 
   async getAll() {
-    return await apiRequest('get', `/${this.resourcePath}`);
+    return await apiRequest("get", this.baseURL);
   }
 
   async getById(id) {
-    return await apiRequest('get', `/${this.resourcePath}/${id}`);
+    return await apiRequest("get", `${this.baseURL}/${id}`);
   }
 
   async insert(object) {
-    return await apiRequest('post', `/${this.resourcePath}`, object);
+    return await apiRequest("post", this.baseURL, object);
   }
 
   async update(id, object) {
-    return await apiRequest('put', `/${this.resourcePath}/${id}`, object);
+    return await apiRequest("put", `${this.baseURL}/${id}`, object);
   }
 
   async delete(id) {
-    return await apiRequest('delete', `/${this.resourcePath}/${id}`);
+    return await apiRequest("delete", `${this.baseURL}/${id}`);
   }
 }
 
