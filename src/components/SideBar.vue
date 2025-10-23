@@ -5,19 +5,14 @@
             <div class="bg-[#1C5E27] text-white p-2 rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-qr-code-icon lucide-qr-code">
-                    <rect width="5" height="5" x="3" y="3" rx="1" />
-                    <rect width="5" height="5" x="16" y="3" rx="1" />
-                    <rect width="5" height="5" x="3" y="16" rx="1" />
-                    <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
-                    <path d="M21 21v.01" />
-                    <path d="M12 7v3a2 2 0 0 1-2 2H7" />
-                    <path d="M3 12h.01" />
-                    <path d="M12 3h.01" />
-                    <path d="M12 16v.01" />
-                    <path d="M16 12h1" />
-                    <path d="M21 12v.01" />
-                    <path d="M12 21v-1" />
+                    class="lucide lucide-notepad-text-icon lucide-notepad-text">
+                    <path d="M8 2v4" />
+                    <path d="M12 2v4" />
+                    <path d="M16 2v4" />
+                    <rect width="16" height="18" x="4" y="4" rx="2" />
+                    <path d="M8 10h6" />
+                    <path d="M8 14h8" />
+                    <path d="M8 18h5" />
                 </svg>
             </div>
             <span v-show="isExpanded"
@@ -30,7 +25,7 @@
                     :class="['flex transform items-center rounded-lg px-3 py-3 text-gray-600 transition-colors duration-300 hover:bg-[#1C5E27] hover:text-white', isExpanded ? '' : 'justify-center']">
                     <component :is="item.icon" class="h-6 w-6" />
                     <span v-show="isExpanded" class="mx-4 text-base font-medium whitespace-nowrap">{{ item.label
-                    }}</span>
+                        }}</span>
                 </router-link>
             </nav>
 
@@ -62,8 +57,8 @@ defineProps({
 });
 
 const menuItemsUser = shallowRef([
-    { to: "/user", label: 'User', icon: User },
-    { to: "/course", label: "Courses", icon: GraduationCap },
+    { to: "/userDashboard", label: 'Usuarios', icon: User },
+    { to: "/courseDashboard", label: "Cursos", icon: GraduationCap },
 ]);
 
 
