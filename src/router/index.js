@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import CourseRegisterView from "../View/CourseRegisterView.vue";
 import UserRegisterView from "../View/UserRegisterView.vue";
+import CourseRegisterView from "../View/CourseRegisterView.vue"
 
 const router = createRouter({
   history: createWebHistory(),
