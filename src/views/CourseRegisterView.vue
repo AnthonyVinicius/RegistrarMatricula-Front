@@ -2,16 +2,21 @@
 import { ref } from "vue";
 import CourseDAO from "../service/CourseDAO";
 
-const DAO = CourseDAO();
+const DAO = CourseDAO;
 const course = ref({
     name: "",
     acronym: "",
     duration: null,
 });
 
-const submitForm = () => {
-    console.log("Course:", course.value);
-    DAO.insert(course.value)
+const submitForm = async () => {
+    try {
+        await CourseDAO.insert(course.value);
+        alert("Usuário cadastrado com sucesso!");
+    } catch (err) {
+        console.error(err);
+        alert("Erro ao cadastrar usuário: " + err.message);
+    }
 };
 const selectedForm = ref("user")
 </script>
