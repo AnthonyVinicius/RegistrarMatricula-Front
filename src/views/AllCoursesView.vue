@@ -28,10 +28,10 @@
                                 Nome
                             </th>
                             <th scope="col" class="px-6 py-3 font-semibold tracking-wider uppercase text-white">
-                                Email
+                                Acrônimo
                             </th>
                             <th scope="col" class="px-6 py-3 font-semibold tracking-wider uppercase text-white">
-                                Matrícula
+                                Duração
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 font-semibold tracking-wider uppercase text-white text-right">
@@ -40,32 +40,29 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-white">
-                        <tr v-for="user in users" :key="user.id"
+                        <tr v-for="course in courses" :key="course.id"
                             class="hover:bg-gray-50 transition-colors duration-150">
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900 flex items-center gap-2">
                                 <div
                                     class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-800 font-semibold">
-                                    {{ user.name.charAt(0).toUpperCase() }}
+                                    {{ course.name.charAt(0).toUpperCase() }}
                                 </div>
-                                <div>
-                                    <p class="font-semibold">{{ user.name }}</p>
-                                    <p class="text-xs text-gray-500">ID: {{ user.id.slice(0, 8) }}...</p>
-                                </div>
+                                <p class="font-semibold">{{ course.name }}</p>
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="text-gray-700">{{ user.email }}</span>
+                                <span class="text-gray-700">{{ course.acronym }}</span>
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="bg-green-50 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">
-                                    {{ user.registration }}
+                                    {{ course.duration }}
                                 </span>
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-right">
                                 <div class="flex justify-end gap-3">
-                                    
+
                                     <!--  
                                     <button @click="handleEdit(user)"
                                         class="p-2 rounded-md hover:bg-gray-100 transition" title="Editar">
@@ -81,7 +78,7 @@
                                     </button>
                                     -->
 
-                                    <button @click="handleDelete(user.id)"
+                                    <button @click="handleDelete(course.id)"
                                         class="p-2 rounded-md hover:bg-red-50 transition" title="Excluir">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="w-5 h-5 text-red-500 hover:text-red-700" fill="none"
@@ -164,6 +161,7 @@ async function handleDelete(courseId) {
     if (confirm('Tem certeza que deseja excluir este item?')) {
         try {
             await CourseDAO.delete(courseId);
+            alert("Curso removido com Sucesso")
             await loadData();
         } catch (error) {
             console.error('Erro ao excluir item:', error);

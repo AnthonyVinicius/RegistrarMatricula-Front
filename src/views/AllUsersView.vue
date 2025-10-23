@@ -164,6 +164,7 @@ async function handleDelete(userId) {
     if (confirm('Tem certeza que deseja excluir este item?')) {
         try {
             await UserDao.delete(userId);
+            alert("Usuario removido com sucesso")
             await loadData();
         } catch (error) {
             console.error('Erro ao excluir item:', error);

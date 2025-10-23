@@ -75,14 +75,10 @@ onMounted (() =>{
                                     Nome
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-semibold tracking-wider uppercase text-white">
-                                    Email
+                                    Acrônimo
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-semibold tracking-wider uppercase text-white">
-                                    Matrícula
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 font-semibold tracking-wider uppercase text-white text-right">
-                                    Ações
+                                    Duração
                                 </th>
                             </tr>
                         </thead>
@@ -95,20 +91,17 @@ onMounted (() =>{
                                         class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-800 font-semibold">
                                         {{ course.name.charAt(0).toUpperCase() }}
                                     </div>
-                                    <div>
                                         <p class="font-semibold">{{ course.name }}</p>
-                                        <p class="text-xs text-gray-500">ID: {{ course.id.slice(0, 8) }}...</p>
-                                    </div>
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="text-gray-700">{{ user.email }}</span>
+                                    <span class="text-gray-700">{{ course.acronym }}</span>
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span
                                         class="bg-green-50 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">
-                                        {{ user.registration }}
+                                        {{ course.duration }}
                                     </span>
                                 </td>
                             </tr>

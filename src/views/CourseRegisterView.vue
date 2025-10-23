@@ -9,11 +9,18 @@ const course = ref({
     acronym: "",
     duration: null,
 });
-
+const limparForm = () =>{
+    course.value = {
+        name: "",
+        acronym: "",
+        duration: null,
+    };
+}
 const submitForm = async () => {
     try {
         await CourseDAO.insert(course.value);
-        alert("Usuário cadastrado com sucesso!");
+        alert("Curso cadastrado com sucesso!");
+        limparForm()
     } catch (err) {
         console.error(err);
         alert("Erro ao cadastrar usuário: " + err.message);
